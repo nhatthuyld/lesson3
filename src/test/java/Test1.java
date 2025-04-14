@@ -6,6 +6,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+
 public class Test1{
 
     WebDriver driver;
@@ -19,8 +21,7 @@ public class Test1{
     public void testCase1() {
         ShareFile sf = new ShareFile(driver);
         sf.open_Url("https://www.utest.com/");
-        driver.findElement(By.xpath("/html/body/ui-view/unauthenticated-container/div/div/unauthenticated-header-new/header/div/div[2]/ul/li[2]/a")).click();
-        driver.findElement(By.xpath("#regs_container > div > div:nth-child(2) > div > div.ui-view > div > form > div.form-group.col-xs-12.text-right > button")).click();
+        sf.clickButton("//button[text()='Join Now']");
 
 
     }
