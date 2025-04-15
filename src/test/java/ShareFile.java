@@ -27,7 +27,7 @@ public class ShareFile {
     public void clickButton(String xpath_string)
     {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement loginBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id(xpath_string)));
+        WebElement loginBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_string)));
         loginBtn.click();
     }
 
