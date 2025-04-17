@@ -18,16 +18,19 @@ public class Test2 {
     @BeforeMethod
     public void setup() {
         driver = new ChromeDriver();
+        driver.manage().window().maximize(); // Maximize cửa sổ trình duyệt
+
     }
 
     @Test
-    public void testCase1() {
+    public void testCase2() throws InterruptedException {
         ShareFile sf = new ShareFile(driver);
         sf.open_Url("https://www.utest.com/");
         sf.findXpath("//button[@id='onetrust-accept-btn-handler']").click();
         sf.findXpath("//a[@class='unauthenticated-nav-bar-new__sign-up']").click();
+
         sf.findXpath("//input[@id='email']").sendKeys("invalice@@email.com");
-        String emailErrorMessage = sf.findByID("emailError").getText();
+        String emailErrorMessage = sf.findXpath("//*[@id='emailError']").getText();
         assertTrue("email error not found!", emailErrorMessage.contains("Enter valid email"));
 
 
@@ -36,6 +39,6 @@ public class Test2 {
 
     @AfterMethod
     public void tearDown() {
-        driver.quit();
+       // driver.quit();
     }
 }

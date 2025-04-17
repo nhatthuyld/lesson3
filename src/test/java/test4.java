@@ -12,7 +12,7 @@ import java.time.Duration;
 import static org.testng.Assert.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
-public class Test3 {
+public class test4 {
 
     WebDriver driver;
 
@@ -24,12 +24,11 @@ public class Test3 {
     }
 
     @Test
-    public void testCase3() {
+    public void testCase4() {
         ShareFile sf = new ShareFile(driver);
         sf.open_Url("https://www.utest.com/");
         sf.findXpath("//button[@id='onetrust-accept-btn-handler']").click();
         sf.findXpath("//a[@class='unauthenticated-nav-bar-new__sign-up']").click();
-
         sf.findByID("firstname").sendKeys("nguyen nhat");
         sf.findByID("lastname").sendKeys("tran");
         sf.findByID("email").sendKeys("thuy@email.com");
@@ -55,7 +54,12 @@ public class Test3 {
         String title_step2 = sf.findXpath("//span[normalize-space()='Step 2:']").getText();
         assertTrue("Step 2 not found", title_step2.contains("Step 2:"));
 
-
+        //Type city
+        sf.findXpath("//input[@type='search']").sendKeys("ho chi minh");
+        //get list combobox after searching
+        WebElement cmb_city = sf.findByID("#cdk-overlay-0");
+        Select city = new Select(cmb_city);
+        city.selectByVisibleText("Ho Chi Minh, Ho Chi Minh City, Vietnam");
 
 
 
@@ -63,8 +67,8 @@ public class Test3 {
 
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void tearDown() {
+//        driver.quit();
+//    }
 }

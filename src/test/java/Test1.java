@@ -18,6 +18,8 @@ public class Test1{
     @BeforeMethod
     public void setup() {
         driver = new ChromeDriver();
+        driver.manage().window().maximize(); // Maximize cửa sổ trình duyệt
+
     }
 
     @Test
