@@ -23,6 +23,9 @@ public class ShareFile {
     public WebElement findXpath(String xpath_string) {
         return (driver.findElement(By.xpath(xpath_string)));
     }
+    public WebElement findCSSSelector(String CSS_string) {
+        return (driver.findElement(By.cssSelector(CSS_string)));
+    }
 
     public WebElement findByID(String id_string) {
         return (driver.findElement(By.id(id_string)));
