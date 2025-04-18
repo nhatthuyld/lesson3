@@ -1,15 +1,11 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class ShareFile {
-    WebDriver driver;
 
+    WebDriver driver;
 
     public ShareFile(WebDriver driver) {
         this.driver = driver;
@@ -29,6 +25,12 @@ public class ShareFile {
 
     public WebElement findByID(String id_string) {
         return (driver.findElement(By.id(id_string)));
+    }
+
+    public void SendString(String xpath_String, String s){
+
+        WebElement e = driver.findElement(By.xpath(xpath_String));
+        e.sendKeys(s);
     }
 
 

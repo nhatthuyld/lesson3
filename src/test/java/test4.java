@@ -12,16 +12,7 @@ import java.time.Duration;
 import static org.testng.Assert.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
-public class test4 {
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setup() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize(); // Maximize cửa sổ trình duyệt
-
-    }
+public class test4 extends TestcaseBase {
 
     @Test
     public void testCase4() {
@@ -62,13 +53,6 @@ public class test4 {
         city.selectByVisibleText("Ho Chi Minh, Ho Chi Minh City, Vietnam");
 
 
-
-
-
     }
 
-//    @AfterMethod
-//    public void tearDown() {
-//        driver.quit();
-//    }
 }
