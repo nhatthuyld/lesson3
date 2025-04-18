@@ -1,17 +1,13 @@
+import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import javax.swing.text.html.Option;
 import java.time.Duration;
 import java.util.List;
-
-import static org.testng.Assert.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class test4 extends TestcaseBase {
@@ -59,13 +55,14 @@ public class test4 extends TestcaseBase {
         sf.findXpath("//input[@type='search']").sendKeys("ho chi minh");
 
         // 3. Wait briefly if needed (or use WebDriverWait)
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(4000); } catch (InterruptedException e) {}
 
         // 4. Get options and click the one you want
-        List<WebElement> options = driver.findElements(By.id("cdk-overlay-0")); // adjust selector
+        List<WebElement> options = driver.findElements(By.cssSelector("#cdk-overlay-0 div div")); // adjust selector
         for (WebElement option : options) {
             if (option.getText().contains("Ho Chi Minh")) {
                 option.click();
+                break;
             }
             else System.out.println("No result matching");
         }
