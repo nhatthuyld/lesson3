@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -15,14 +17,17 @@ import static org.testng.AssertJUnit.assertTrue;
 public class test4 extends TestcaseBase {
 
     @Test
-    public void testCase4() {
+    public void testCase4() throws InterruptedException {
         ShareFile sf = new ShareFile(driver);
         sf.open_Url("https://www.utest.com/");
         sf.findXpath("//button[@id='onetrust-accept-btn-handler']").click();
         sf.findXpath("//a[@class='unauthenticated-nav-bar-new__sign-up']").click();
-        sf.findByID("firstname").sendKeys("nguyen nhat");
-        sf.findByID("lastname").sendKeys("tran");
-        sf.findByID("email").sendKeys("thuy@email.com");
+
+        // sf.findByID("firstname").sendKeys("nguyen nhat");
+        WebElement namebtn = sf.findByID("firstName");
+        namebtn.sendKeys("nguyen nhat");
+        sf.findByID("lastName").sendKeys("tran");
+        sf.findByID("email").sendKeys("thuy@gmail.com");
         //Choose birth Month
         WebElement select_birthMonth = sf.findByID("birthMonth");
         Select Select_BM = new Select(select_birthMonth);
@@ -38,20 +43,32 @@ public class test4 extends TestcaseBase {
         Select Select_BY= new Select(select_birthYear);
         Select_BY.selectByValue("1993");
 
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, -2000);"); // Scroll up by 500 pixels
+        Thread.sleep(Duration.ofSeconds(1));
+
         //CLick button next
         sf.findXpath("//span[normalize-space()='Next: Location']").click();
 
         //verify title step 2
+        // Thread.sleep(Duration.ofMillis(300));
         String title_step2 = sf.findXpath("//span[normalize-space()='Step 2:']").getText();
         assertTrue("Step 2 not found", title_step2.contains("Step 2:"));
 
         //Type city
         sf.findXpath("//input[@type='search']").sendKeys("ho chi minh");
-        //get list combobox after searching
-        WebElement cmb_city = sf.findByID("#cdk-overlay-0");
-        Select city = new Select(cmb_city);
-        city.selectByVisibleText("Ho Chi Minh, Ho Chi Minh City, Vietnam");
 
+        // 3. Wait briefly if needed (or use WebDriverWait)
+        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+
+        // 4. Get options and click the one you want
+        List<WebElement> options = driver.findElements(By.id("cdk-overlay-0")); // adjust selector
+        for (WebElement option : options) {
+            if (option.getText().contains("Ho Chi Minh")) {
+                option.click();
+            }
+            else System.out.println("No result matching");
+        }
 
     }
 
