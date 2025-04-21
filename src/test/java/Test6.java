@@ -9,10 +9,10 @@ import java.time.Duration;
 import java.util.List;
 import static org.testng.AssertJUnit.assertTrue;
 
-public class Test5 extends TestcaseBase {
+public class Test6 extends TestcaseBase {
 
     @Test
-    public void testCase5() throws InterruptedException {
+    public void testCase6() throws InterruptedException {
         ShareFile sf = new ShareFile(driver);
         sf.open_Url("https://www.utest.com/");
         sf.findXpath("//button[@id='onetrust-accept-btn-handler']").click();
@@ -57,13 +57,12 @@ public class Test5 extends TestcaseBase {
         try { Thread.sleep(2000); } catch (InterruptedException e) {}
 
         // 4. Get options and click the one you want
-        List<WebElement> options = driver.findElements(By.cssSelector("#cdk-overlay-0 div div")); // adjust selector
-        for (WebElement option : options) {
+        List<WebElement> countryOptions = driver.findElements(By.cssSelector("#cdk-overlay-0 div div"));
+        for (WebElement option : countryOptions) {
             if (option.getText().contains("Ho Chi Minh")) {
                 option.click();
                 break;
             }
-
         }
 
 
@@ -78,14 +77,23 @@ public class Test5 extends TestcaseBase {
 
         //Click next
         sf.findCSSSelector("button[class='btn btn-blue'] i[class='material-icons']").click();
-        Thread.sleep(Duration.ofMillis(1000));
+        Thread.sleep(Duration.ofMillis(2000));
 
-        //Clear your computer
-        sf.findCSSSelector("button[aria-label='Clear Computer OS selection'] i[class='material-icons']").click();
-        //Check textbox your computer is cleared
-        WebElement inputBox = sf.findCSSSelector("div[name='osId'] span[aria-label='Select OS']");
-        String text = inputBox.getText();
-        Assert.assertEquals(text,"Select OS");
+
+        // Choose mobile device
+        try { Thread.sleep(1000); } catch (InterruptedException e) {}
+        List<WebElement> computerOptions = driver.findElements(By.cssSelector("#ui-select-choices-9 span div"));
+        for (WebElement option : computerOptions) {
+            if (option.getText().contains("Aplle")) {
+                System.out.println(option.getText());
+                option.click();
+                break;
+            }
+        }
+
+
+
+
 
 
     }
