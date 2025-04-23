@@ -55,7 +55,7 @@ public class Test6 extends TestcaseBase {
         sf.findXpath("//input[@type='search']").sendKeys("ho chi minh");
 
         // 3. Wait briefly if needed (or use WebDriverWait)
-        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        try { Thread.sleep(3000); } catch (InterruptedException e) {}
 
         // 4. Get options and click the one you want
         List<WebElement> countryOptions = driver.findElements(By.cssSelector("#cdk-overlay-0 div div"));
@@ -78,7 +78,7 @@ public class Test6 extends TestcaseBase {
 
         //Click next
         sf.findCSSSelector("button[class='btn btn-blue'] i[class='material-icons']").click();
-        Thread.sleep(Duration.ofMillis(500));
+        Thread.sleep(Duration.ofMillis(1000));
 
         //Click mobile device
         sf.findXpathToCLickAble("//div[@name='handsetMakerId']").click();
@@ -98,6 +98,46 @@ public class Test6 extends TestcaseBase {
 
         //Click next
         sf.findXpathToCLickAble("//span[normalize-space()='Next: Last Step']").click();
+
+        //input weak password
+        WebElement passStrengthElement = sf.findByID("password");
+        passStrengthElement.sendKeys("Thuy123456");
+
+        //get pass strength text
+        String passStrengthText = sf.findXpath("//div[@class='pass-instruction']//h4").getText();
+
+        //Verify password is weak
+        Assert.assertEquals(passStrengthText, "Weak");
+
+        //Clear password
+        passStrengthElement.clear();
+
+        //input good password
+        passStrengthElement.sendKeys("Thuy123456$");
+
+        //get pass strength text
+        String passStrengthText2 = sf.findXpath("//div[@class='pass-instruction']//h4").getText();
+
+
+        //Verify password is good
+        Assert.assertEquals(passStrengthText2, "Good");
+
+        //Clear password
+        passStrengthElement.clear();
+
+        //input Great password
+        passStrengthElement.sendKeys("Thuy123456$7890");
+
+        //get pass strength text
+        String passStrengthText3 = sf.findXpath("//div[@class='pass-instruction']//h4").getText();
+
+        //Verify password is good
+        Assert.assertEquals(passStrengthText3, "Great");
+
+
+
+
+
 
 
 
