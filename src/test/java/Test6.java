@@ -78,7 +78,7 @@ public class Test6 extends TestcaseBase {
 
         //Click next
         sf.findCSSSelector("button[class='btn btn-blue'] i[class='material-icons']").click();
-        Thread.sleep(Duration.ofMillis(1000));
+        Thread.sleep(Duration.ofMillis(500));
 
         //Click mobile device
         sf.findXpathToCLickAble("//div[@name='handsetMakerId']").click();
