@@ -45,8 +45,9 @@ public class Test6 extends TestcaseBase {
         //CLick button next
         sf.findXpath("//span[normalize-space()='Next: Location']").click();
 
+
         //verify title step 2
-        // Thread.sleep(Duration.ofMillis(300));
+
         String title_step2 = sf.findXpath("//span[normalize-space()='Step 2:']").getText();
         assertTrue("Step 2 not found", title_step2.contains("Step 2:"));
 
@@ -77,22 +78,26 @@ public class Test6 extends TestcaseBase {
 
         //Click next
         sf.findCSSSelector("button[class='btn btn-blue'] i[class='material-icons']").click();
-        Thread.sleep(Duration.ofMillis(2000));
+        Thread.sleep(Duration.ofMillis(1000));
+
+        //Click mobile device
+        sf.findXpathToCLickAble("//div[@name='handsetMakerId']").click();
+        Thread.sleep(Duration.ofMillis(1000));
+        sf.findXpathToCLickAble("//div[@name='handsetMakerId']//div[contains(text(),'Apple')]").click();
 
 
-        // Choose mobile device
-        try { Thread.sleep(1000); } catch (InterruptedException e) {}
-        List<WebElement> computerOptions = driver.findElements(By.cssSelector("#ui-select-choices-9 span div"));
-        for (WebElement option : computerOptions) {
-            if (option.getText().contains("Aplle")) {
-                System.out.println(option.getText());
-                option.click();
-                break;
-            }
-        }
+        //Click model
+        sf.findXpathToCLickAble("//div[@name='handsetModelId']").click();
+        Thread.sleep(Duration.ofMillis(1000));
+        sf.findXpathToCLickAble("//div[@name='handsetModelId']//div[text()='iPhone 16 Pro Max']").click();
 
+        //Click operate System
+        sf.findXpathToCLickAble("//div[@name='handsetOSId']").click();
+        Thread.sleep(Duration.ofMillis(1000));
+        sf.findXpathToCLickAble("//div[@name='handsetOSId']//div[text()='iOS 18.5 Beta']").click();
 
-
+        //Click next
+        sf.findXpathToCLickAble("//span[normalize-space()='Next: Last Step']").click();
 
 
 

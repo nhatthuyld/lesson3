@@ -1,6 +1,9 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 
 public class ShareFile {
@@ -9,30 +12,43 @@ public class ShareFile {
 
     public ShareFile(WebDriver driver) {
         this.driver = driver;
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }
 
+    public void open_Url(String url_string) {
+        driver.get(url_string);
     }
-   public void open_Url(String url_string)
-   {
-       driver.get(url_string);
-   }
+
     public WebElement findXpath(String xpath_string) {
-        return (driver.findElement(By.xpath(xpath_string)));
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(10000));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath_string)));
+        return element;
     }
+
+    public WebElement findXpathToCLickAble(String xpath_string) {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(10000));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath_string)));
+        return element;
+    }
+
     public WebElement findCSSSelector(String CSS_string) {
-        return (driver.findElement(By.cssSelector(CSS_string)));
-    }
+        WebDriverWait wait = new WebDriverWait(driver,  Duration.ofMillis(10000));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(CSS_string)));
+        return element;    }
 
     public WebElement findByID(String id_string) {
-        return (driver.findElement(By.id(id_string)));
+        WebDriverWait wait = new WebDriverWait(driver,  Duration.ofMillis(10000));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(id_string)));
+        return element;
     }
 
-    public void SendString(String xpath_String, String s){
+    public void SendString(String xpath_String, String s) {
 
-        WebElement e = driver.findElement(By.xpath(xpath_String));
-        e.sendKeys(s);
+        WebDriverWait wait = new WebDriverWait(driver,  Duration.ofMillis(10000));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath_String)));
+        element.sendKeys(s);
     }
-
 
 
 }
