@@ -1,4 +1,3 @@
-import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -14,13 +13,14 @@ public class Test6 extends TestcaseBase {
     @Test
     public void testCase6() throws InterruptedException {
         ShareFile sf = new ShareFile(driver);
-        sf.open_Url("https://www.utest.com/");
-        sf.findXpath("//button[@id='onetrust-accept-btn-handler']").click();
-        sf.findXpath("//a[@class='unauthenticated-nav-bar-new__sign-up']").click();
+        HomepageObject homepage = new HomepageObject(driver);
+        homepage.JoinNow();
 
-        // sf.findByID("firstname").sendKeys("nguyen nhat");
-        WebElement namebtn = sf.findByID("firstName");
-        namebtn.sendKeys("nguyen nhat");
+        Step1Object step1 = new Step1Object(driver);
+        step1.fillFirstName();
+
+        /// ////// e chỉ đang object tới đây thôi.
+
         sf.findByID("lastName").sendKeys("tran");
         sf.findByID("email").sendKeys("thuy@gmail.com");
         //Choose birth Month
