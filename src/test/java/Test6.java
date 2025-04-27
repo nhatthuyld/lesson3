@@ -1,12 +1,7 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.time.Duration;
-import java.util.List;
-import static org.testng.AssertJUnit.assertTrue;
 
 public class Test6 extends TestcaseBase {
 
@@ -18,127 +13,76 @@ public class Test6 extends TestcaseBase {
 
         Step1Object step1 = new Step1Object(driver);
         step1.fillFirstName();
-
-        /// ////// e chỉ đang object tới đây thôi.
-
-        sf.findByID("lastName").sendKeys("tran");
-        sf.findByID("email").sendKeys("thuy@gmail.com");
-        //Choose birth Month
-        WebElement select_birthMonth = sf.findByID("birthMonth");
-        Select Select_BM = new Select(select_birthMonth);
-        Select_BM.selectByIndex(1);
-
-        //Choose birth Day
-        WebElement select_birthDay = sf.findByID("birthDay");
-        Select Select_BD= new Select(select_birthDay);
-        Select_BD.selectByVisibleText("11");
-
-        //Choose birth year
-        WebElement select_birthYear = sf.findByID("birthYear");
-        Select Select_BY= new Select(select_birthYear);
-        Select_BY.selectByValue("1993");
+        step1.fillLastName();
+        step1.fillEmail();
+        step1.fillBirthMonth();
+        step1.fillBirthDay();
+        step1.fillBirthYear();
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, -2000);"); // Scroll up by 500 pixels
         Thread.sleep(Duration.ofSeconds(1));
 
-        //CLick button next
-        sf.findXpath("//span[normalize-space()='Next: Location']").click();
+        step1.clickBtnNext();
 
-
+        Step2Object step2 = new Step2Object(driver);
         //verify title step 2
-
-        String title_step2 = sf.findXpath("//span[normalize-space()='Step 2:']").getText();
-        assertTrue("Step 2 not found", title_step2.contains("Step 2:"));
+        step2.verifyStep2();
 
         //Type city
-        sf.findXpath("//input[@type='search']").sendKeys("ho chi minh");
-
-        // 3. Wait briefly if needed (or use WebDriverWait)
-        try { Thread.sleep(3000); } catch (InterruptedException e) {}
-
-        // 4. Get options and click the one you want
-        List<WebElement> countryOptions = driver.findElements(By.cssSelector("#cdk-overlay-0 div div"));
-        for (WebElement option : countryOptions) {
-            if (option.getText().contains("Ho Chi Minh")) {
-                option.click();
-                break;
-            }
-        }
-
-
+        step2.fillCity();
         Thread.sleep(Duration.ofSeconds(1));
+
         //input zip
-        sf.findByID("zip").sendKeys("70000");
+        step2.fillZip();
 
         // Select country
-        WebElement country_Select = sf.findByID("countryId");
-        Select Country_option= new Select(country_Select);
-        Country_option.selectByVisibleText("Vietnam");
-
-        //Click next
-        sf.findCSSSelector("button[class='btn btn-blue'] i[class='material-icons']").click();
+        step2.fillCountry();
+        step2.clickNext();
         Thread.sleep(Duration.ofMillis(1000));
+
+        Step3Object step3 = new Step3Object(driver);
 
         //Click mobile device
-        sf.findXpathToCLickAble("//div[@name='handsetMakerId']").click();
-        Thread.sleep(Duration.ofMillis(1000));
-        sf.findXpathToCLickAble("//div[@name='handsetMakerId']//div[contains(text(),'Apple')]").click();
-
+        step3.fillMobileDevice();
 
         //Click model
-        sf.findXpathToCLickAble("//div[@name='handsetModelId']").click();
-        Thread.sleep(Duration.ofMillis(1000));
-        sf.findXpathToCLickAble("//div[@name='handsetModelId']//div[text()='iPhone 16 Pro Max']").click();
+        step3.fillModel();
 
         //Click operate System
-        sf.findXpathToCLickAble("//div[@name='handsetOSId']").click();
-        Thread.sleep(Duration.ofMillis(1000));
-        sf.findXpathToCLickAble("//div[@name='handsetOSId']//div[text()='iOS 18.5 Beta']").click();
+        step3.filloperateSystem();
 
         //Click next
-        sf.findXpathToCLickAble("//span[normalize-space()='Next: Last Step']").click();
+        step3.clickNext();
+
+        Step4Object step4 = new Step4Object(driver);
 
         //input weak password
-        WebElement passStrengthElement = sf.findByID("password");
-        passStrengthElement.sendKeys("Thuy123456");
+        step4.fillPassword("Thuy123456");
 
         //get pass strength text
-        String passStrengthText = sf.findXpath("//div[@class='pass-instruction']//h4").getText();
+        String passStrengthText = step4.getPassStrength();
 
         //Verify password is weak
         Assert.assertEquals(passStrengthText, "Weak");
 
         //Clear password
-        passStrengthElement.clear();
+        step4.clearPassword();
 
         //input good password
-        passStrengthElement.sendKeys("Thuy123456$");
-
-        //get pass strength text
-        String passStrengthText2 = sf.findXpath("//div[@class='pass-instruction']//h4").getText();
-
+        step4.fillPassword("Thuy123456$");
 
         //Verify password is good
-        Assert.assertEquals(passStrengthText2, "Good");
+        Assert.assertEquals(step4.getPassStrength(), "Good");
 
         //Clear password
-        passStrengthElement.clear();
+        step4.clearPassword();
 
         //input Great password
-        passStrengthElement.sendKeys("Thuy123456$7890");
-
-        //get pass strength text
-        String passStrengthText3 = sf.findXpath("//div[@class='pass-instruction']//h4").getText();
+        step4.fillPassword("Thuy123456$7890");
 
         //Verify password is good
-        Assert.assertEquals(passStrengthText3, "Great");
-
-
-
-
-
-
+        Assert.assertEquals(step4.getPassStrength(), "Great");
 
 
     }
