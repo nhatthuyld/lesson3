@@ -1,3 +1,4 @@
+import org.PageObject.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -7,17 +8,18 @@ public class Test6 extends TestcaseBase {
 
     @Test
     public void testCase6() throws InterruptedException {
-        ShareFile sf = new ShareFile(driver);
-        HomepageObject homepage = new HomepageObject(driver);
+
+        openURL();
+        Homepage homepage = new Homepage(driver);
         homepage.JoinNow();
 
-        Step1Object step1 = new Step1Object(driver);
-        step1.fillFirstName();
-        step1.fillLastName();
-        step1.fillEmail();
-        step1.fillBirthMonth();
-        step1.fillBirthDay();
-        step1.fillBirthYear();
+        StepOne step1 = new StepOne(driver);
+        step1.fillFirstName("thuy");
+        step1.fillLastName("tran");
+        step1.fillEmail("thuyld@gmail.com");
+        step1.fillBirthMonth("November");
+        step1.fillBirthDay("20");
+        step1.fillBirthYear("1993");
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, -2000);"); // Scroll up by 500 pixels
@@ -25,23 +27,24 @@ public class Test6 extends TestcaseBase {
 
         step1.clickBtnNext();
 
-        Step2Object step2 = new Step2Object(driver);
+        StepTwo step2 = new StepTwo(driver);
         //verify title step 2
         step2.verifyStep2();
 
         //Type city
-        step2.fillCity();
+        step2.fillCity("ho chi minh");
         Thread.sleep(Duration.ofSeconds(1));
 
         //input zip
-        step2.fillZip();
+        step2.fillZip("70000");
 
         // Select country
-        step2.fillCountry();
+        step2.fillCountry("Vietnam");
+
         step2.clickNext();
         Thread.sleep(Duration.ofMillis(1000));
 
-        Step3Object step3 = new Step3Object(driver);
+        StepThree step3 = new StepThree(driver);
 
         //Click mobile device
         step3.fillMobileDevice();
@@ -55,7 +58,7 @@ public class Test6 extends TestcaseBase {
         //Click next
         step3.clickNext();
 
-        Step4Object step4 = new Step4Object(driver);
+        StepFour step4 = new StepFour(driver);
 
         //input weak password
         step4.fillPassword("Thuy123456");

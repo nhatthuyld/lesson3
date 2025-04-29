@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class TestcaseBase {
     WebDriver driver;
+    private static String url = "https://www.utest.com";
 
     @BeforeMethod
     public void setup() {
@@ -17,5 +18,9 @@ public class TestcaseBase {
     @AfterMethod
     public void tearDown() {
         driver.quit();
+    }
+
+    public void openURL(){
+        driver.get(url);
     }
 }
