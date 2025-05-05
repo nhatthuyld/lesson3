@@ -1,9 +1,13 @@
 import org.PageObject.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.time.Duration;
 
+
+
+@Listeners(TestListener.class)
 public class Test6 extends TestcaseBase {
 
     @Test
