@@ -2,7 +2,9 @@ import org.apache.logging.log4j.LogManager;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.openqa.selenium.WebDriver;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.Logger;
+
+
 
 public class TestListener implements ITestListener {
 
@@ -10,7 +12,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        logger.info(" Test FAILED: " + result.getName());
+        logger.error(" Test FAILED: " + result.getName());
         Object testClass = result.getInstance();
         WebDriver driver = ((TestcaseBase) testClass).getDriver();
         ScreenshotUtil.capture(driver, result.getName());

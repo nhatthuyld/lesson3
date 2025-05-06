@@ -7,10 +7,9 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.time.Duration;
 
-
-
 @Listeners(TestListener.class)
 public class Test6 extends TestcaseBase {
+
     private static final Logger logger = LogManager.getLogger(Test6.class);
 
     @Test
@@ -35,7 +34,7 @@ public class Test6 extends TestcaseBase {
 
         step1.clickBtnNext();
 
-        logger.info("Go to Step 2");
+       // logger.info("Go to Step 2");
         StepTwo step2 = new StepTwo(driver);
         //verify title step 2
         step2.verifyStep2();
@@ -53,7 +52,7 @@ public class Test6 extends TestcaseBase {
         step2.clickNext();
         Thread.sleep(Duration.ofMillis(1000));
 
-        logger.info("Go to Step 3");
+       // logger.info("Go to Step 3");
         StepThree step3 = new StepThree(driver);
 
         //Click mobile device
@@ -67,7 +66,7 @@ public class Test6 extends TestcaseBase {
 
         //Click next
         step3.clickNext();
-        logger.info("Go to Step 4");
+       // logger.info("Go to Step 4");
 
 
         StepFour step4 = new StepFour(driver);
