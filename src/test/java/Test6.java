@@ -1,4 +1,6 @@
 import org.PageObject.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -9,14 +11,16 @@ import java.time.Duration;
 
 @Listeners(TestListener.class)
 public class Test6 extends TestcaseBase {
+    private static final Logger logger = LogManager.getLogger(Test6.class);
 
     @Test
     public void testCase6() throws InterruptedException {
-
+        logger.info(" Open page");
         openURL();
         Homepage homepage = new Homepage(driver);
         homepage.JoinNow();
 
+        logger.info("Go to Step 1");
         StepOne step1 = new StepOne(driver);
         step1.fillFirstName("thuy");
         step1.fillLastName("tran");
@@ -31,6 +35,7 @@ public class Test6 extends TestcaseBase {
 
         step1.clickBtnNext();
 
+        logger.info("Go to Step 2");
         StepTwo step2 = new StepTwo(driver);
         //verify title step 2
         step2.verifyStep2();
@@ -48,6 +53,7 @@ public class Test6 extends TestcaseBase {
         step2.clickNext();
         Thread.sleep(Duration.ofMillis(1000));
 
+        logger.info("Go to Step 3");
         StepThree step3 = new StepThree(driver);
 
         //Click mobile device
@@ -61,6 +67,8 @@ public class Test6 extends TestcaseBase {
 
         //Click next
         step3.clickNext();
+        logger.info("Go to Step 4");
+
 
         StepFour step4 = new StepFour(driver);
 
@@ -71,7 +79,7 @@ public class Test6 extends TestcaseBase {
         String passStrengthText = step4.getPassStrength();
 
         //Verify password is weak
-        Assert.assertEquals(passStrengthText, "Weak");
+        Assert.assertEquals(passStrengthText, "Weakk");
 
         //Clear password
         step4.clearPassword();
