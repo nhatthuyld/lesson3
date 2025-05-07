@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
 import java.time.Duration;
 
 @Listeners(TestListener.class)
@@ -78,7 +79,14 @@ public class Test6 extends TestcaseBase {
         String passStrengthText = step4.getPassStrength();
 
         //Verify password is weak
-        Assert.assertEquals(passStrengthText, "Weak");
+        try {
+            Assert.assertEquals(passStrengthText, "Weakk");
+        } catch (AssertionError e) {
+            // Log failure details when assertion fails
+            logger.error("Pass is not weak. Please check");
+            throw e;
+        }
+
 
         //Clear password
         step4.clearPassword();
@@ -87,7 +95,14 @@ public class Test6 extends TestcaseBase {
         step4.fillPassword("Thuy123456$");
 
         //Verify password is good
-        Assert.assertEquals(step4.getPassStrength(), "Good");
+        //Verify password is weak
+        try {
+            Assert.assertEquals(step4.getPassStrength(), "Good");
+        } catch (AssertionError e2) {
+            // Log failure details when assertion fails
+            logger.error("Pass is not Good. Please check");
+            throw e2;
+        }
 
         //Clear password
         step4.clearPassword();
@@ -96,7 +111,13 @@ public class Test6 extends TestcaseBase {
         step4.fillPassword("Thuy123456$7890");
 
         //Verify password is good
-        Assert.assertEquals(step4.getPassStrength(), "Great");
+        try {
+            Assert.assertEquals(step4.getPassStrength(), "Great");
+        } catch (AssertionError e3) {
+            // Log failure details when assertion fails
+            logger.error("Pass is not Good. Please check");
+            throw e3;
+        }
 
 
     }
