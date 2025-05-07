@@ -14,7 +14,7 @@ public class Test6 extends TestcaseBase {
 
     @Test
     public void testCase6() throws InterruptedException {
-        logger.info(" Open page");
+        logger.info("Open page");
         openURL();
         Homepage homepage = new Homepage(driver);
         homepage.JoinNow();
@@ -78,7 +78,7 @@ public class Test6 extends TestcaseBase {
         String passStrengthText = step4.getPassStrength();
 
         //Verify password is weak
-        Assert.assertEquals(passStrengthText, "Weakk");
+        Assert.assertEquals(passStrengthText, "Weak");
 
         //Clear password
         step4.clearPassword();
