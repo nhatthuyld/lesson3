@@ -1,15 +1,10 @@
 package org.PageObject;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
 import java.util.List;
-import java.util.Locale;
-
 import static org.testng.AssertJUnit.assertTrue;
-
 public class StepTwo extends BasePage {
 
     private static String stepTitleTwoXpath = "//span[normalize-space()='Step 2:']";
