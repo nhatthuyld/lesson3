@@ -1,12 +1,8 @@
+import common.FileGeneration;
 import org.PageObject.*;
-import org.openqa.selenium.JavascriptExecutor;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.time.Duration;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CSV extends TestcaseBase {
 
@@ -18,25 +14,21 @@ public class CSV extends TestcaseBase {
 
         StepOne step1 = new StepOne(driver);
 
-        String path = "src//Data//example.csv"; // Replace with your actual file path
-        String line;
-
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(","); // Assuming comma-separated
-                step1.fillFirstName(values[0]);
-                step1.fillLastName(values[1]);
-                step1.fillEmail(values[2]);
-                step1.fillBirthMonth(values[3]);
-                step1.fillBirthDay(values[4]);
-                step1.fillBirthYear(values[5]);
+        String path = "src//Data//example.csv";
+        FileGeneration fileGeneration = new FileGeneration();
+        ArrayList<HashMap<String, String>> userInfo = fileGeneration.readCscFile(path);
+            for(int i = 0; i< userInfo.size() ; i++) {
+                step1.fillFirstName(userInfo.get(i).get("firstname"));
+                step1.fillLastName(userInfo.get(i).get("lastname"));
+                step1.fillEmail(userInfo.get(i).get("email"));
+                step1.fillBirthMonth(userInfo.get(i).get("MOB"));
+                step1.fillBirthDay(userInfo.get(i).get("DOB"));
+                step1.fillBirthYear(userInfo.get(i).get("YOB"));
 
                 driver.navigate().refresh();
 
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
 
 
     }
