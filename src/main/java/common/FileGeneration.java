@@ -1,14 +1,18 @@
 package common;
 
+import org.testng.annotations.DataProvider;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class FileGeneration {
 
-    public ArrayList<HashMap<String, String>> readCscFile(String path) {
+
+    public ArrayList<HashMap<String, String>> readCsvFile(String path) {
 
         String[] headers;
         String line;
@@ -31,5 +35,18 @@ public class FileGeneration {
 
         return listData;
     }
+
+    @DataProvider(name = "csvData")
+    public Object[][] getData() throws Exception {
+        List<HashMap<String, String>> dataList = readCsvFile( "src//Data//example.csv");
+        Object[][] result = new Object[dataList.size()][1];
+        for (int i = 0; i < dataList.size(); i++) {
+            result[i][0] = dataList.get(i);
+        }
+        return result;
+    }
+
+
+
 
 }

@@ -16,7 +16,7 @@ public class CSV extends TestcaseBase {
 
         String path = "src//Data//example.csv";
         FileGeneration fileGeneration = new FileGeneration();
-        ArrayList<HashMap<String, String>> userInfo = fileGeneration.readCscFile(path);
+        ArrayList<HashMap<String, String>> userInfo = fileGeneration.readCsvFile(path);
             for(int i = 0; i< userInfo.size() ; i++) {
                 step1.fillFirstName(userInfo.get(i).get("firstname"));
                 step1.fillLastName(userInfo.get(i).get("lastname"));

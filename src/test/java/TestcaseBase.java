@@ -17,14 +17,16 @@ public class TestcaseBase {
     public void setup() {
 
         driver = new ChromeDriver();
-        driver.manage().window().maximize(); // Maximize cửa sổ trình duyệt
+        driver.manage().window().maximize();
+        driver.get(url);
+
 
     }
 
     @AfterMethod
     public void tearDown() {
 
-            driver.quit();
+        driver.quit();
 
     }
 
