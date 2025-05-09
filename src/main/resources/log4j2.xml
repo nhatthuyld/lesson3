@@ -4,12 +4,6 @@
         <!-- Console appender with color support -->
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss} %-5p %c{1} - %m%n"/>
-
-            <Filters>
-                <!-- Red for ERROR logs -->
-                <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
-            </Filters>
-
         </Console>
 
         <!-- File appender for logs -->

@@ -1,36 +1,15 @@
-2025-05-07 14:23:30 INFO  Test6 - Open page
-2025-05-07 14:23:37 INFO  Test6 - Go to Step 1
-2025-05-07 14:23:40 INFO  Test6 - Go to Step 2
-2025-05-07 14:23:46 INFO  Test6 - Go to Step 3
-2025-05-07 14:23:53 INFO  Test6 - Go to Step 4
-2025-05-07 14:38:08 INFO  Test6 - Open page
-2025-05-07 14:38:15 INFO  Test6 - Go to Step 1
-2025-05-07 14:38:17 INFO  Test6 - Go to Step 2
-2025-05-07 14:38:23 INFO  Test6 - Go to Step 3
-2025-05-07 14:38:33 ERROR TestListener -  Test FAILED: testCase6
-2025-05-07 14:44:01 INFO  Test6 - Open page
-2025-05-07 14:44:08 INFO  Test6 - Go to Step 1
-2025-05-07 14:44:10 INFO  Test6 - Go to Step 2
-2025-05-07 14:44:16 INFO  Test6 - Go to Step 3
-2025-05-07 14:44:23 INFO  Test6 - Go to Step 4
-2025-05-07 14:44:23 ERROR Test6 - Pass is not weak. Please check
-2025-05-07 14:44:23 ERROR TestListener -  Took screen shot for fail: testCase6
-2025-05-07 14:49:28 INFO  Test6 - Open page
-2025-05-07 14:49:35 INFO  Test6 - Go to Step 1
-2025-05-07 14:49:38 INFO  Test6 - Go to Step 2
-2025-05-07 14:49:43 INFO  Test6 - Go to Step 3
-2025-05-07 14:49:51 INFO  Test6 - Go to Step 4
-2025-05-07 14:50:15 INFO  Test6 - Open page
-2025-05-07 14:50:22 INFO  Test6 - Go to Step 1
-2025-05-07 14:50:25 INFO  Test6 - Go to Step 2
-2025-05-07 14:50:30 INFO  Test6 - Go to Step 3
-2025-05-07 14:50:37 INFO  Test6 - Go to Step 4
-2025-05-07 14:50:37 ERROR Test6 - Pass is not weak. Please check
-2025-05-07 14:50:37 ERROR TestListener -  Took screen shot for fail: testCase6
-2025-05-07 14:54:58 INFO  Test6 - Open page
-2025-05-07 14:55:05 INFO  Test6 - Go to Step 1
-2025-05-07 14:55:07 INFO  Test6 - Go to Step 2
-2025-05-07 14:55:13 INFO  Test6 - Go to Step 3
-2025-05-07 14:55:20 INFO  Test6 - Go to Step 4
-2025-05-07 14:55:20 ERROR Test6 - Pass is not weak. Please check
-2025-05-07 14:55:20 ERROR TestListener -  Took screen shot for fail: testCase6
+2025-05-09 11:05:33 INFO  Test6 - Open page
+2025-05-09 11:05:37 INFO  Test6 - Go to Step 1
+2025-05-09 11:05:39 INFO  Test6 - Go to Step 2
+2025-05-09 11:05:45 INFO  Test6 - Go to Step 3
+2025-05-09 11:05:55 ERROR TestListener -  Took screen shot for fail: testCase6
+2025-05-09 11:06:44 INFO  Test6 - Open page
+2025-05-09 11:06:47 INFO  Test6 - Go to Step 1
+2025-05-09 11:06:49 INFO  Test6 - Go to Step 2
+2025-05-09 11:06:55 INFO  Test6 - Go to Step 3
+2025-05-09 11:07:23 INFO  Test6 - Open page
+2025-05-09 11:07:27 INFO  Test6 - Go to Step 1
+2025-05-09 11:07:29 INFO  Test6 - Go to Step 2
+2025-05-09 11:07:35 INFO  Test6 - Go to Step 3
+2025-05-09 11:07:42 INFO  Test6 - Go to Step 4
+2025-05-09 11:07:42 ERROR TestListener -  Took screen shot for fail: testCase6

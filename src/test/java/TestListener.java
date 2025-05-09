@@ -16,7 +16,5 @@ public class TestListener implements ITestListener {
         Object testClass = result.getInstance();
         WebDriver driver = ((TestcaseBase) testClass).getDriver();
         ScreenshotUtil.capture(driver, result.getName());
-
-
     }
 }

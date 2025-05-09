@@ -2,11 +2,11 @@ import org.PageObject.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
-import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
+import org.testng.asserts.SoftAssert;
+
 
 @Listeners(TestListener.class)
 public class Test6 extends TestcaseBase {
@@ -75,18 +75,12 @@ public class Test6 extends TestcaseBase {
         //input weak password
         step4.fillPassword("Thuy123456");
 
-        //get pass strength text
-        String passStrengthText = step4.getPassStrength();
+        //Define softassert
+
+        SoftAssert softAssert = new SoftAssert();
 
         //Verify password is weak
-        try {
-            Assert.assertEquals(passStrengthText, "Weakk");
-        } catch (AssertionError e) {
-            // Log failure details when assertion fails
-            logger.error("Pass is not weak. Please check");
-            throw e;
-        }
-
+        SoftAssertFunction.checkEquals(softAssert,step4.getPassStrength(),"weak","Verify title is Weak");
 
         //Clear password
         step4.clearPassword();
@@ -94,15 +88,7 @@ public class Test6 extends TestcaseBase {
         //input good password
         step4.fillPassword("Thuy123456$");
 
-        //Verify password is good
-        //Verify password is weak
-        try {
-            Assert.assertEquals(step4.getPassStrength(), "Good");
-        } catch (AssertionError e2) {
-            // Log failure details when assertion fails
-            logger.error("Pass is not Good. Please check");
-            throw e2;
-        }
+        SoftAssertFunction.checkEquals(softAssert,step4.getPassStrength(),"good","Verify title is Good");
 
         //Clear password
         step4.clearPassword();
@@ -110,14 +96,14 @@ public class Test6 extends TestcaseBase {
         //input Great password
         step4.fillPassword("Thuy123456$7890");
 
-        //Verify password is good
-        try {
-            Assert.assertEquals(step4.getPassStrength(), "Great");
-        } catch (AssertionError e3) {
-            // Log failure details when assertion fails
-            logger.error("Pass is not Good. Please check");
-            throw e3;
-        }
+        //Verify password is Great
+
+        SoftAssertFunction.checkEquals(softAssert,step4.getPassStrength(),"great", "Verify title is Great");
+
+
+        softAssert.assertAll();
+
+
 
 
     }
