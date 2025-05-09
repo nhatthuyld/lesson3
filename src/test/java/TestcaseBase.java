@@ -1,4 +1,5 @@
 
+import org.PageObject.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -16,6 +17,8 @@ public class TestcaseBase {
     @BeforeMethod
     public void setup() {
 
+        //clean exist image on screenshots fold before run
+        BasePage.cleanScreenshotFolder("screenshots");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(url);

@@ -32,7 +32,7 @@ public class StepTwo extends BasePage {
         findXpath(cityXpath).sendKeys(cityValue);
         // 3. Wait briefly if needed (or use WebDriverWait)
         try {
-            Thread.sleep(3000);
+            Thread.sleep(4000);
         } catch (InterruptedException e) {
         }
 

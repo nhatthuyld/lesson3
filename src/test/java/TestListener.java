@@ -12,7 +12,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        logger.error(" Took screen shot for fail: " + result.getName());
+        //logger.error(" ❌ Took screen shot for fail: " + result.getName());
         Object testClass = result.getInstance();
         WebDriver driver = ((TestcaseBase) testClass).getDriver();
         ScreenshotUtil.capture(driver, result.getName());
