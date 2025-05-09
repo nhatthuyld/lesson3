@@ -12,7 +12,7 @@ public class ScreenshotUtil {
     public static void capture(WebDriver driver, String methodName) {
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File dest = new File("screenshots/" + methodName + /*"_" + timestamp +*/ ".png");
+        File dest = new File("screenshots/" + methodName + "_" + timestamp + ".png");
         try {
             FileUtils.copyFile(srcFile, dest);
         } catch (IOException e) {

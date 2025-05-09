@@ -80,7 +80,7 @@ public class Test6 extends TestcaseBase {
         SoftAssert softAssert = new SoftAssert();
 
         //Verify password is weak
-        SoftAssertFunction.checkEquals(softAssert,step4.getPassStrength(),"weak","Verify title is Weak");
+        SoftAssertFunction.checkEquals(driver,softAssert,step4.getPassStrength(),"weak","Verify title is Weak");
 
         //Clear password
         step4.clearPassword();
@@ -88,7 +88,7 @@ public class Test6 extends TestcaseBase {
         //input good password
         step4.fillPassword("Thuy123456$");
 
-        SoftAssertFunction.checkEquals(softAssert,step4.getPassStrength(),"good","Verify title is Good");
+        SoftAssertFunction.checkEquals(driver,softAssert,step4.getPassStrength(),"good","Verify title is Good");
 
         //Clear password
         step4.clearPassword();
@@ -98,7 +98,7 @@ public class Test6 extends TestcaseBase {
 
         //Verify password is Great
 
-        SoftAssertFunction.checkEquals(softAssert,step4.getPassStrength(),"great", "Verify title is Great");
+        SoftAssertFunction.checkEquals(driver,softAssert,step4.getPassStrength(),"great", "Verify title is Great");
 
 
         softAssert.assertAll();

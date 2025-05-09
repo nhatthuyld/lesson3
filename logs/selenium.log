@@ -1,15 +1,9 @@
-2025-05-09 11:05:33 INFO  Test6 - Open page
-2025-05-09 11:05:37 INFO  Test6 - Go to Step 1
-2025-05-09 11:05:39 INFO  Test6 - Go to Step 2
-2025-05-09 11:05:45 INFO  Test6 - Go to Step 3
-2025-05-09 11:05:55 ERROR TestListener -  Took screen shot for fail: testCase6
-2025-05-09 11:06:44 INFO  Test6 - Open page
-2025-05-09 11:06:47 INFO  Test6 - Go to Step 1
-2025-05-09 11:06:49 INFO  Test6 - Go to Step 2
-2025-05-09 11:06:55 INFO  Test6 - Go to Step 3
-2025-05-09 11:07:23 INFO  Test6 - Open page
-2025-05-09 11:07:27 INFO  Test6 - Go to Step 1
-2025-05-09 11:07:29 INFO  Test6 - Go to Step 2
-2025-05-09 11:07:35 INFO  Test6 - Go to Step 3
-2025-05-09 11:07:42 INFO  Test6 - Go to Step 4
-2025-05-09 11:07:42 ERROR TestListener -  Took screen shot for fail: testCase6
+2025-05-09 16:21:44 INFO  Test6 - Open page
+2025-05-09 16:21:48 INFO  Test6 - Go to Step 1
+2025-05-09 16:21:51 INFO  Test6 - Go to Step 2
+2025-05-09 16:21:58 INFO  Test6 - Go to Step 3
+2025-05-09 16:22:05 INFO  Test6 - Go to Step 4
+2025-05-09 16:22:05 ERROR SoftAssertFunction - ❌ Step [Verify title is Weak] failed: expected [weak], but got [Weak]
+2025-05-09 16:22:06 ERROR SoftAssertFunction - ❌ Step [Verify title is Good] failed: expected [good], but got [Good]
+2025-05-09 16:22:06 ERROR SoftAssertFunction - ❌ Step [Verify title is Great] failed: expected [great], but got [Great]
+2025-05-09 16:22:07 ERROR TestListener -  ❌ Took screen shot for fail: testCase6
