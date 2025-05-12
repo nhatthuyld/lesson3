@@ -2,6 +2,7 @@
 import org.PageObject.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -19,6 +20,8 @@ public class TestcaseBase {
 
         //clean exist image on screenshots fold before run
         BasePage.cleanScreenshotFolder("screenshots");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(url);
