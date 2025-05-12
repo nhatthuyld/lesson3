@@ -9,9 +9,9 @@ import org.testng.asserts.SoftAssert;
 
 
 @Listeners(TestListener.class)
-public class Test6 extends TestcaseBase {
+public class TestSix extends TestcaseBase {
 
-    private static final Logger logger = LogManager.getLogger(Test6.class);
+    private static final Logger logger = LogManager.getLogger(TestSix.class);
 
     @Test
     public void testCase6() throws InterruptedException {
