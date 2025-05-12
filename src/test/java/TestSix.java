@@ -9,9 +9,9 @@ import org.testng.asserts.SoftAssert;
 
 
 @Listeners(TestListener.class)
-public class Test6 extends TestcaseBase {
+public class TestSix extends TestcaseBase {
 
-    private static final Logger logger = LogManager.getLogger(Test6.class);
+    private static final Logger logger = LogManager.getLogger(TestSix.class);
 
     @Test
     public void testCase6() throws InterruptedException {
@@ -49,7 +49,6 @@ public class Test6 extends TestcaseBase {
 
         // Select country
         step2.fillCountry("Vietnam");
-        System.out.println("Long Nguyen");
 
         step2.clickNext();
         Thread.sleep(Duration.ofMillis(1000));
