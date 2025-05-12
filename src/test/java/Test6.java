@@ -49,6 +49,7 @@ public class Test6 extends TestcaseBase {
 
         // Select country
         step2.fillCountry("Vietnam");
+        System.out.println("Long Nguyen");
 
         step2.clickNext();
         Thread.sleep(Duration.ofMillis(1000));
