@@ -13,3 +13,9 @@
 2025-05-09 11:07:35 INFO  Test6 - Go to Step 3
 2025-05-09 11:07:42 INFO  Test6 - Go to Step 4
 2025-05-09 11:07:42 ERROR TestListener -  Took screen shot for fail: testCase6
+2025-05-13 08:52:51 INFO  BasePage - Deleted screenshot: Verify title is Good_20250509_162206.png
+2025-05-13 08:52:51 INFO  BasePage - Deleted screenshot: testCase6_20250509_162207.png
+2025-05-13 08:52:51 INFO  BasePage - Deleted screenshot: Verify title is Great_20250509_162206.png
+2025-05-13 08:52:51 INFO  BasePage - Deleted screenshot: Verify title is Weak_20250509_162205.png
+2025-05-13 08:53:03 INFO  BasePage - No screenshot files to delete in: screenshots
+2025-05-13 08:53:12 INFO  BasePage - No screenshot files to delete in: screenshots

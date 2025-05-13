@@ -13,6 +13,7 @@ public class TestSix extends TestcaseBase {
 
     private static final Logger logger = LogManager.getLogger(TestSix.class);
 
+
     @Test
     public void testCase6() throws InterruptedException {
         logger.info("Open page ");

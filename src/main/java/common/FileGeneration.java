@@ -36,7 +36,7 @@ public class FileGeneration {
         return listData;
     }
 
-    @DataProvider(name = "csvData")
+    @DataProvider(name = "csvDataProvider")
     public Object[][] getData() throws Exception {
         List<HashMap<String, String>> dataList = readCsvFile( "src//Data//example.csv");
         Object[][] result = new Object[dataList.size()][1];

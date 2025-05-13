@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class DataProvider extends TestcaseBase {
 
-    @Test(dataProvider = "csvData", dataProviderClass = FileGeneration.class)
+    @Test(dataProvider = "csvDataProvider", dataProviderClass = FileGeneration.class)
     public void FillInfo(HashMap<String, String> data) throws InterruptedException {
 
         Homepage homepage = new Homepage(driver);
