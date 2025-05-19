@@ -17,7 +17,6 @@ public class TestSix extends TestcaseBase {
     @Test
     public void testCase6() throws InterruptedException {
         logger.info("Open page ");
-        openURL();
         Homepage homepage = new Homepage(driver);
         homepage.JoinNow();
 
