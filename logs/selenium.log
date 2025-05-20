@@ -1,33 +1,18 @@
-2025-05-19 14:02:53 INFO  BasePage - No screenshot files to delete in: screenshots
-2025-05-19 14:02:55 INFO  TestSix - Open page 
-2025-05-19 14:03:02 ERROR TestListener -  Took screen shot for fail: testCase6
-2025-05-19 14:03:33 INFO  BasePage - Deleted screenshot: testCase6_20250519_140302.png
-2025-05-19 14:03:40 INFO  TestSix - Open page 
-2025-05-19 14:03:43 INFO  TestSix - Go to Step 1
-2025-05-19 14:03:46 INFO  TestSix - Go to Step 2
-2025-05-19 14:03:53 INFO  TestSix - Go to Step 3
-2025-05-19 14:04:03 ERROR TestListener -  Took screen shot for fail: testCase6
-2025-05-19 14:04:03 ERROR TestListener -  Took screen shot for fail: testCase6
-2025-05-19 15:14:55 INFO  BasePage - No screenshot files to delete in: screenshots
-2025-05-19 15:15:02 INFO  TestSix - Open page 
-2025-05-19 15:15:04 INFO  TestSix - Go to Step 1
-2025-05-19 15:15:14 ERROR TestListener -  Took screen shot for fail: testCase6
-2025-05-19 15:15:14 ERROR TestListener -  Took screen shot for fail: testCase6
-2025-05-19 15:26:16 INFO  BasePage - No screenshot files to delete in: screenshots
-2025-05-19 15:26:22 INFO  TestSix - Open page 
-2025-05-19 15:26:24 INFO  TestSix - Go to Step 1
-2025-05-19 15:26:34 ERROR TestListener -  Took screen shot for fail: testCase6
-2025-05-19 15:26:46 INFO  BasePage - Deleted screenshot: testCase6_20250519_152634.png
-2025-05-19 15:26:52 INFO  TestSix - Open page 
-2025-05-19 15:26:54 INFO  TestSix - Go to Step 1
-2025-05-19 15:26:57 INFO  TestSix - Go to Step 2
-2025-05-19 15:27:04 INFO  TestSix - Go to Step 3
-2025-05-19 15:27:14 INFO  BasePage - No screenshot files to delete in: screenshots
-2025-05-19 15:27:20 INFO  TestSix - Open page 
-2025-05-19 15:27:23 INFO  TestSix - Go to Step 1
-2025-05-19 15:27:25 INFO  TestSix - Go to Step 2
-2025-05-19 15:27:32 INFO  TestSix - Go to Step 3
-2025-05-19 15:27:38 INFO  TestSix - Go to Step 4
-2025-05-19 15:27:39 ERROR SoftAssertFunction - ❌ Step [Verify title is Weak] failed: expected [weak], but got [Weak]
-2025-05-19 15:27:40 ERROR SoftAssertFunction - ❌ Step [Verify title is Good] failed: expected [good], but got [Good]
-2025-05-19 15:27:40 ERROR SoftAssertFunction - ❌ Step [Verify title is Great] failed: expected [great], but got [Great]
+2025-05-20 14:11:41 INFO  BasePage - Deleted screenshot: testCase6_20250520_131950.png
+2025-05-20 14:11:48 INFO  TestSix - Open page 
+2025-05-20 14:11:51 INFO  TestSix - Go to Step 1
+2025-05-20 14:11:54 INFO  TestSix - Go to Step 2
+2025-05-20 14:12:01 INFO  TestSix - Go to Step 3
+2025-05-20 14:12:07 INFO  TestSix - Go to Step 4
+2025-05-20 14:12:08 ERROR SoftAssertFunction - ❌ Step [Verify title is Weak] failed: expected [weak], but got [Weak]
+2025-05-20 14:12:08 ERROR SoftAssertFunction - ❌ Step [Verify title is Good] failed: expected [good], but got [Good]
+2025-05-20 14:12:09 ERROR SoftAssertFunction - ❌ Step [Verify title is Great] failed: expected [great], but got [Great]
+2025-05-20 14:18:08 INFO  BasePage - Deleted screenshot: Verify title is Good_20250520_141208.png
+2025-05-20 14:18:08 INFO  BasePage - Deleted screenshot: Verify title is Weak_20250520_141208.png
+2025-05-20 14:18:08 INFO  BasePage - Deleted screenshot: Verify title is Great_20250520_141209.png
+2025-05-20 14:18:15 INFO  TestSix - Open page 
+2025-05-20 14:18:17 INFO  TestSix - Go to Step 1
+2025-05-20 14:18:20 INFO  TestSix - Go to Step 2
+2025-05-20 14:18:27 INFO  TestSix - Go to Step 3
+2025-05-20 14:18:37 ERROR TestListener -  Took screen shot for fail: testCase6
+2025-05-20 14:18:37 ERROR TestListener -  Took screen shot for fail: testCase6
