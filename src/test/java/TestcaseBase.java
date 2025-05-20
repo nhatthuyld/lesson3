@@ -5,11 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.asserts.SoftAssert;
 
 
 public class TestcaseBase {
     WebDriver driver;
     private static String url = "https://www.utest.com";
+    SoftAssert softAssert;
 
     public WebDriver getDriver() {
         return driver;
@@ -21,6 +23,7 @@ public class TestcaseBase {
         //clean exist image on screenshots fold before run
         BasePage.cleanScreenshotFolder("screenshots");
         ChromeOptions options = new ChromeOptions();
+        softAssert = new SoftAssert();
         options.addArguments("--headless=new");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -32,8 +35,13 @@ public class TestcaseBase {
     @AfterMethod
     public void tearDown() {
 
-        driver.quit();
-
+        try {
+           // softAssert.assertAll();
+        } finally {
+            if (driver != null) {
+                driver.quit();
+            }
+        }
     }
 
     public void openURL() {

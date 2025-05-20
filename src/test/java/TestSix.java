@@ -77,8 +77,6 @@ public class TestSix extends TestcaseBase {
 
         //Define softassert
 
-        SoftAssert softAssert = new SoftAssert();
-
         //Verify password is weak
         SoftAssertFunction.checkEquals(driver,softAssert,step4.getPassStrength(),"weak","Verify title is Weak");
 
@@ -101,7 +99,6 @@ public class TestSix extends TestcaseBase {
         SoftAssertFunction.checkEquals(driver,softAssert,step4.getPassStrength(),"great", "Verify title is Great");
 
 
-        //softAssert.assertAll();
 
 
 
