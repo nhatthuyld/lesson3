@@ -67,7 +67,7 @@ public class TestSix extends TestcaseBase {
 
         //Click next
         step3.clickNext();
-        logger.info("Go to Step 4");
+        logger.info("Go to Step  4");
 
 
         StepFour step4 = new StepFour(driver);
