@@ -16,3 +16,8 @@
 2025-05-20 14:18:27 INFO  TestSix - Go to Step 3
 2025-05-20 14:18:37 ERROR TestListener -  Took screen shot for fail: testCase6
 2025-05-20 14:18:37 ERROR TestListener -  Took screen shot for fail: testCase6
+2025-05-20 22:12:16 INFO  BasePage - No screenshot files to delete in: screenshots
+2025-05-20 22:12:29 INFO  TestSix - Open page 
+2025-05-20 22:12:31 INFO  TestSix - Go to Step 1
+2025-05-20 22:12:44 ERROR TestListener -  Took screen shot for fail: testCase6
+2025-05-20 22:12:44 ERROR TestListener -  Took screen shot for fail: testCase6

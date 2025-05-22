@@ -13,9 +13,6 @@ public class DataProvider extends TestcaseBase {
         homepage.JoinNow();
 
         StepOne step1 = new StepOne(driver);
-
-       // String path = "src//Data//example.csv";
-
         step1.fillFirstName(data.get("firstname"));
         step1.fillLastName(data.get("lastname"));
         step1.fillEmail(data.get("email"));
